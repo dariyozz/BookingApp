@@ -1,0 +1,51 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum SlotStatus {
+  AVAILABLE
+  BOOKED
+  CANCELLED
+}
+
+enum BookingStatus {
+  CONFIRMED
+  CANCELLED
+}
+
+model Slot {
+  id             String     @id @default(cuid())
+  startAt        DateTime   @db.Timestamptz(3)
+  endAt          DateTime   @db.Timestamptz(3)
+  durationMinutes Int
+  status         SlotStatus @default(AVAILABLE)
+  isDemoData     Boolean    @default(false)
+  createdAt      DateTime   @default(now()) @db.Timestamptz(3)
+  updatedAt      DateTime   @updatedAt
+  bookings       Booking[]
+
+  @@index([startAt])
+  @@index([status])
+}
+
+model Booking {
+  id           String        @id @default(cuid())
+  slotId       String
+  slot         Slot          @relation(fields: [slotId], references: [id])
+  visitorName  String
+  visitorEmail String
+  note         String?
+  status       BookingStatus @default(CONFIRMED)
+  isDemoData   Boolean       @default(false)
+  createdAt    DateTime      @default(now()) @db.Timestamptz(3)
+  updatedAt    DateTime      @updatedAt
+
+  @@index([slotId])
+  @@index([visitorEmail])
+  @@index([status])
+}

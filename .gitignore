@@ -1,0 +1,12 @@
+node_modules/
+client/dist/
+server/dist/
+server/coverage/
+server/src/generated/prisma/
+client/.env*
+server/.env
+server/.env.*
+!client/.env.example
+!server/.env.example
+*.tsbuildinfo
+npm-debug.log*

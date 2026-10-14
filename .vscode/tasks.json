@@ -1,0 +1,866 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "check-shell",
+			"type": "shell",
+			"command": "pwd && ls -la",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "scaffold-monorepo",
+			"type": "shell",
+			"command": "cmd /c \"cd /d c:\\Users\\Asus\\bookingApp && npm init -y && npm create vite@latest client -- --template react-ts && npx @nestjs/cli new server --skip-install --package-manager npm --strict\"",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "scaffold-monorepo2",
+			"type": "shell",
+			"command": "cmd /c \"cd /d c:\\Users\\Asus\\bookingApp; npm init -y; npm create vite@latest client -- --template react-ts; npx @nestjs/cli new server --skip-install --package-manager npm --strict\"",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "scaffold-server",
+			"type": "shell",
+			"command": "cmd /c \"cd /d c:\\Users\\Asus\\bookingApp; npx @nestjs/cli new server --skip-install --package-manager npm --strict\"",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "scaffold-server2",
+			"type": "shell",
+			"command": "cmd /c \"cd /d c:\\Users\\Asus\\bookingApp; npx -y @nestjs/cli new server --skip-install --package-manager npm --strict --yes\"",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "scaffold-server3",
+			"type": "shell",
+			"command": "cmd /c \"cd /d c:\\Users\\Asus\\bookingApp; echo y | npx @nestjs/cli new server --skip-install --package-manager npm --strict\"",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "install-client-deps",
+			"type": "shell",
+			"command": "cmd /c \"cd /d c:\\Users\\Asus\\bookingApp\\client; npm install tailwindcss @tailwindcss/vite @radix-ui/react-dialog @radix-ui/react-label @radix-ui/react-slot class-variance-authority clsx tailwind-merge lucide-react react-router-dom date-fns date-fns-tz\"",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "install-server-deps",
+			"type": "shell",
+			"command": "cmd /c \"cd /d c:\\Users\\Asus\\bookingApp\\server; npm install @nestjs/config @nestjs/swagger class-transformer class-validator date-fns date-fns-tz @prisma/client google-generative-ai; npm install -D prisma\"",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "install-server-libs",
+			"type": "shell",
+			"command": "cmd /c \"cd /d c:\\Users\\Asus\\bookingApp\\server; npm install @nestjs/config @nestjs/swagger class-transformer class-validator date-fns date-fns-tz @prisma/client @google/generative-ai; npm install -D prisma\"",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "make-prisma-dir",
+			"type": "shell",
+			"command": "cmd /c \"mkdir c:\\Users\\Asus\\bookingApp\\server\\prisma\\migrations\\20261014_init\"",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "make-client-dirs",
+			"type": "shell",
+			"command": "cmd /c \"mkdir c:\\Users\\Asus\\bookingApp\\client\\src\\lib; mkdir c:\\Users\\Asus\\bookingApp\\client\\src\\components\\ui\"",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "server-deps-final",
+			"type": "shell",
+			"command": "cmd /c \"cd /d c:\\Users\\Asus\\bookingApp\\server; npm install @nestjs/config @nestjs/swagger class-transformer class-validator date-fns date-fns-tz @prisma/client @google/generative-ai; npm install -D prisma\"",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "verify-server-tests",
+			"type": "shell",
+			"command": "cmd /c \"cd /d c:\\Users\\Asus\\bookingApp; npm --prefix server run test\"",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "ls-server-modules",
+			"type": "shell",
+			"command": "cmd /c \"cd /d c:\\Users\\Asus\\bookingApp; dir server\\node_modules\\.bin; dir client\\node_modules\\.bin\"",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "ls-server-root",
+			"type": "shell",
+			"command": "cmd /c \"cd /d c:\\Users\\Asus\\bookingApp; dir server\"",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "ls-root-modules",
+			"type": "shell",
+			"command": "cmd /c \"cd /d c:\\Users\\Asus\\bookingApp; dir node_modules\\.bin | findstr /i vitest /i nest\"",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "ls-root-deps",
+			"type": "shell",
+			"command": "cmd /c \"cd /d c:\\Users\\Asus\\bookingApp; dir node_modules\"",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "ls-server-lock",
+			"type": "shell",
+			"command": "cmd /c \"cd /d c:\\Users\\Asus\\bookingApp; dir server\\package-lock.json; dir package-lock.json\"",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "install-workspace-deps",
+			"type": "shell",
+			"command": "cmd /c \"cd /d c:\\Users\\Asus\\bookingApp; npm install\"",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "verify-server-tests2",
+			"type": "shell",
+			"command": "cmd /c \"cd /d c:\\Users\\Asus\\bookingApp; npm --workspace server run test\"",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "probe-date-fns-tz",
+			"type": "shell",
+			"command": "cmd /c \"cd /d c:\\Users\\Asus\\bookingApp; node -p \"require('date-fns-tz')\" | findstr /i zoned\"",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "server-tests",
+			"type": "shell",
+			"command": "cmd /c \"cd /d c:\\Users\\Asus\\bookingApp\\server && npm test -- --runInBand\"",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "server-tests2",
+			"type": "shell",
+			"command": "cd /d c:\\Users\\Asus\\bookingApp\\server; npm test -- --runInBand",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "inspect-date-fns-tz",
+			"type": "shell",
+			"command": "cd /d c:\\Users\\Asus\\bookingApp; node -p \"Object.keys(require('date-fns-tz')).slice(0,50)\"",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "inspect-date-fns-tz2",
+			"type": "shell",
+			"command": "Set-Location 'c:\\Users\\Asus\\bookingApp'; node -p \"Object.keys(require('date-fns-tz')).slice(0,50)\"",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "server-tests3",
+			"type": "shell",
+			"command": "Set-Location 'c:\\Users\\Asus\\bookingApp\\server'; npm test",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "server-tests4",
+			"type": "shell",
+			"command": "Set-Location 'c:\\Users\\Asus\\bookingApp\\server'; npm test",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "server-tests5",
+			"type": "shell",
+			"command": "Set-Location 'c:\\Users\\Asus\\bookingApp\\server'; npm test",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "project-build",
+			"type": "shell",
+			"command": "Set-Location 'c:\\Users\\Asus\\bookingApp'; npm run build:server; npm run build:client",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "project-build2",
+			"type": "shell",
+			"command": "Set-Location 'c:\\Users\\Asus\\bookingApp'; npm run build:server; npm run build:client",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "inspect-react-tree",
+			"type": "shell",
+			"command": "npm ls react react-dom react-router-dom --all",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "client-build-after-dedupe",
+			"type": "shell",
+			"command": "npm run build:client",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "verify-client-fix",
+			"type": "shell",
+			"command": "npm run build:client",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "verify-server-fix",
+			"type": "shell",
+			"command": "npm run build:server; npm test",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "inspect-backend-pid",
+			"type": "shell",
+			"command": "$connections = Get-NetTCPConnection -LocalPort 3001 -State Listen -ErrorAction SilentlyContinue; $connections | Select-Object LocalAddress,LocalPort,OwningProcess; Get-CimInstance Win32_Process | Where-Object { $_.ProcessId -in $connections.OwningProcess } | Select-Object ProcessId,CommandLine",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "inspect-backend-command",
+			"type": "shell",
+			"command": "Get-CimInstance Win32_Process -Filter \"ProcessId = 5100\" | Format-List ProcessId,ParentProcessId,Name,CommandLine; Get-Process -Id 5100 | Select-Object Id,ProcessName,StartTime",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "inspect-backend-command2",
+			"type": "shell",
+			"command": "Get-CimInstance Win32_Process | Where-Object { $_.ProcessId -eq 5100 } | Select-Object ProcessId,CommandLine | ConvertTo-Json -Compress",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "stop-stale-api",
+			"type": "shell",
+			"command": "Stop-Process -Id 5100",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "teamlift-server-dev",
+			"type": "shell",
+			"command": "npm run dev:server",
+			"isBackground": true,
+			"problemMatcher": []
+		},
+		{
+			"label": "check-repo-status",
+			"type": "shell",
+			"command": "git status --short; Get-Content server\\prisma\\schema.prisma; Get-Content server\\prisma\\seed.ts",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "prisma-version",
+			"type": "shell",
+			"command": "npx prisma -v; npm ls @prisma/client prisma",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "validate-prisma-schema",
+			"type": "shell",
+			"command": "Set-Location 'c:\\Users\\Asus\\bookingApp\\server'; npx prisma validate",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "add-prisma-postgres-adapter",
+			"type": "shell",
+			"command": "npm install --workspace server @prisma/adapter-pg@^7.10.0 pg dotenv; npm install --workspace server -D @types/pg",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "generate-prisma-client",
+			"type": "shell",
+			"command": "Set-Location 'c:\\Users\\Asus\\bookingApp\\server'; npx prisma validate; npx prisma generate",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "build-prisma-backed-api",
+			"type": "shell",
+			"command": "npm run build:server",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "install-seed-runner",
+			"type": "shell",
+			"command": "npm install --workspace server",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "prisma-backed-tests",
+			"type": "shell",
+			"command": "npm test",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "prisma-backed-server-build",
+			"type": "shell",
+			"command": "npm run build:server",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "prisma-schema-validate",
+			"type": "shell",
+			"command": "Set-Location 'c:\\Users\\Asus\\bookingApp\\server'; npx prisma validate; npx prisma generate",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "verify-api-tests",
+			"type": "shell",
+			"command": "npm test; npm run build:server",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "verify-seed-and-cleanup",
+			"type": "shell",
+			"command": "Set-Location 'c:\\Users\\Asus\\bookingApp\\server'; npx tsc --noEmit -p tsconfig.json",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "final-client-build",
+			"type": "shell",
+			"command": "npm run build:client",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "final-server-checks",
+			"type": "shell",
+			"command": "npm test; npm run build:server; Set-Location 'c:\\Users\\Asus\\bookingApp\\server'; npx prisma validate; npx prisma generate",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "check-prisma-scripts-types",
+			"type": "shell",
+			"command": "Set-Location 'c:\\Users\\Asus\\bookingApp\\server'; npx tsc --noEmit --target ES2023 --module NodeNext --moduleResolution NodeNext --strict --skipLibCheck --types node prisma\\seed.ts prisma\\cleanup-demo.ts src\\time-zone.ts",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "seed-script-typecheck",
+			"type": "shell",
+			"command": "Set-Location 'c:\\Users\\Asus\\bookingApp\\server'; npx tsc --noEmit --ignoreConfig --target ES2023 --module NodeNext --moduleResolution NodeNext --strict --skipLibCheck --types node prisma\\seed.ts prisma\\cleanup-demo.ts src\\time-zone.ts",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "sequential-server-typecheck",
+			"type": "shell",
+			"command": "Set-Location 'c:\\Users\\Asus\\bookingApp\\server'; npx tsc --noEmit -p tsconfig.json",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "final-prisma-validation",
+			"type": "shell",
+			"command": "Set-Location 'c:\\Users\\Asus\\bookingApp\\server'; npx prisma validate; npx tsc --noEmit --ignoreConfig --target ES2023 --module NodeNext --moduleResolution NodeNext --strict --skipLibCheck --types node prisma\\seed.ts prisma\\cleanup-demo.ts src\\time-zone.ts",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "final-react-validation",
+			"type": "shell",
+			"command": "npm run build:client",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "inspect-client-generated",
+			"type": "shell",
+			"command": "Get-ChildItem -Force 'node_modules\\@prisma\\client'; Get-ChildItem -Force 'node_modules\\@prisma\\client\\.prisma\\client' -ErrorAction SilentlyContinue; Get-ChildItem -Force 'node_modules\\.prisma\\client' -ErrorAction SilentlyContinue",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "generate-explicit-prisma-client",
+			"type": "shell",
+			"command": "Set-Location 'c:\\Users\\Asus\\bookingApp\\server'; npx prisma validate; npx prisma generate",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "verify-prisma-service",
+			"type": "shell",
+			"command": "npm run build:server; npm test",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "verify-prisma-seed-ts",
+			"type": "shell",
+			"command": "Set-Location 'c:\\Users\\Asus\\bookingApp\\server'; npx tsc --noEmit --ignoreConfig --target ES2023 --module NodeNext --moduleResolution NodeNext --strict --skipLibCheck --types node prisma\\seed.ts prisma\\cleanup-demo.ts src\\time-zone.ts",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "verify-updated-client",
+			"type": "shell",
+			"command": "npm run build:client",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "check-api-listener",
+			"type": "shell",
+			"command": "$connections = Get-NetTCPConnection -LocalPort 3001 -State Listen -ErrorAction SilentlyContinue; $connections | Select-Object LocalAddress,LocalPort,OwningProcess; $ids = @($connections | ForEach-Object { $_.OwningProcess }); Get-CimInstance Win32_Process | Where-Object { $ids -contains $_.ProcessId } | Select-Object ProcessId,CommandLine | Format-List",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "final-api-build-tests",
+			"type": "shell",
+			"command": "npm run build:server; npm test",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "final-client-check",
+			"type": "shell",
+			"command": "npm run build:client",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "final-api-lint",
+			"type": "shell",
+			"command": "npm --workspace server run lint",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "sync-server-workspace-deps",
+			"type": "shell",
+			"command": "npm install --workspace server",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "final-server-run",
+			"type": "shell",
+			"command": "npm run build:server; npm test",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "final-server-lint",
+			"type": "shell",
+			"command": "npm --workspace server run lint",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "final-script-types",
+			"type": "shell",
+			"command": "Set-Location 'c:\\Users\\Asus\\bookingApp\\server'; npx tsc --noEmit --ignoreConfig --target ES2023 --module NodeNext --moduleResolution NodeNext --strict --skipLibCheck --types node prisma\\seed.ts prisma\\cleanup-demo.ts src\\time-zone.ts",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "check-api-health-now",
+			"type": "shell",
+			"command": "try { $response = Invoke-WebRequest -Uri 'http://localhost:3001/api/health' -TimeoutSec 5 -UseBasicParsing; Write-Output \"HTTP $($response.StatusCode)\"; Write-Output $response.Content } catch { Write-Output \"API unavailable: $($_.Exception.Message)\" }",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "masked-env-file-audit",
+			"type": "shell",
+			"command": "$paths = @('server\\.env','server\\.env.local','server\\.env.example'); foreach ($path in $paths) { if (Test-Path $path) { $keys = Get-Content $path | Where-Object { $_ -match '^\\s*[A-Za-z_][A-Za-z0-9_]*\\s*=' } | ForEach-Object { ($_ -split '=',2)[0].Trim() }; Write-Output \"$path exists; keys=$($keys -join ',')\"; if ($path -ne 'server\\.env.example') { Get-Content $path | Where-Object { $_ -match '^\\s*(DATABASE_URL|DIRECT_URL)\\s*=' } | ForEach-Object { $key = ($_ -split '=',2)[0].Trim(); $raw = ($_ -split '=',2)[1].Trim().Trim('\"').Trim(\"'\"); if ([string]::IsNullOrWhiteSpace($raw)) { Write-Output \"$key is empty\" } else { try { $uri = [System.Uri]$raw; Write-Output \"$key present; scheme=$($uri.Scheme); host=$($uri.Host); database-path=$($uri.AbsolutePath)\" } catch { Write-Output \"$key present but not a valid URL\" } } } } } else { Write-Output \"$path is missing\" } }",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "env-files-keys-only",
+			"type": "shell",
+			"command": "foreach ($path in @('server\\.env','server\\.env.local','server\\.env.example')) { if (Test-Path $path) { $keys = Get-Content $path | Where-Object { $_ -match '^\\s*[A-Za-z_][A-Za-z0-9_]*\\s*=' } | ForEach-Object { ($_ -split '=',2)[0].Trim() }; Write-Output \"$path exists; keys=$($keys -join ',')\"; if ($path -ne 'server\\.env.example') { $lines = Get-Content $path | Where-Object { $_ -match '^\\s*DATABASE_URL\\s*=' }; foreach ($line in $lines) { $value = ($line -split '=',2)[1].Trim().Trim([char]34); Write-Output \"DATABASE_URL nonempty=$([bool]$value); length=$($value.Length)\" } } } else { Write-Output \"$path missing\" } }",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "safe-env-audit-node",
+			"type": "shell",
+			"command": "node -e \"const fs=require('fs'); for(const p of ['server/.env','server/.env.local','server/.env.example']) { if(fs.existsSync(p)) { const t=fs.readFileSync(p,'utf8'); console.log(p+' exists; keys='+[...t.matchAll(/^([A-Za-z_][A-Za-z0-9_]*)\\s*=/gm)].map(m=>m[1]).join(',')); if(p!=='server/.env.example') { const m=t.match(/^DATABASE_URL\\s*=\\s*['\\\"]?([^'\\\"\\r\\n]+)/m); if(m) { try { const u=new URL(m[1]); console.log('DATABASE_URL host='+u.hostname+' protocol='+u.protocol); } catch { console.log('DATABASE_URL is not a valid URL'); } } } } else console.log(p+' missing'); }\"",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "check-example-url-presence",
+			"type": "shell",
+			"command": "$matches = Select-String -Path 'server\\.env.example' -Pattern '^\\s*DATABASE_URL\\s*='; if ($matches) { $value = ($matches[0].Line -split '=',2)[1].Trim().Trim([char]34); Write-Output \"DATABASE_URL key is present in server/.env.example; nonempty=$([bool]$value); valueLength=$($value.Length)\" } else { Write-Output 'DATABASE_URL key is missing from server/.env.example' }; if (Test-Path 'server\\.env') { Write-Output 'server/.env already exists' } else { Write-Output 'server/.env does not exist' }",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "copy-local-server-config",
+			"type": "shell",
+			"command": "Copy-Item -LiteralPath 'server\\.env.example' -Destination 'server\\.env' -Force; Write-Output 'Copied server/.env.example to ignored server/.env without displaying values.'",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "sanitize-example-config",
+			"type": "shell",
+			"command": "$updated = Get-Content -LiteralPath 'server\\.env.example' | ForEach-Object { if ($_ -match '^\\s*DATABASE_URL\\s*=') { 'DATABASE_URL=\"postgresql://USER:PASSWORD@YOUR_NEON_HOST/DB_NAME?sslmode=require\"' } elseif ($_ -match '^\\s*DIRECT_URL\\s*=') { 'DIRECT_URL=\"\"' } else { $_ } }; Set-Content -LiteralPath 'server\\.env.example' -Value $updated -Encoding utf8; Write-Output 'Replaced connection values in server/.env.example with placeholders.'",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "apply-db-migrations",
+			"type": "shell",
+			"command": "Set-Location 'c:\\Users\\Asus\\bookingApp\\server'; npx prisma migrate deploy 2>&1 | ForEach-Object { ($_ | Out-String) -replace 'postgres(?:ql)?://[^@\\s]+@', 'postgresql://[REDACTED]@' }",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "clear-local-direct-url-placeholder",
+			"type": "shell",
+			"command": "$updated = Get-Content -LiteralPath 'server\\.env' | ForEach-Object { if ($_ -match '^\\s*DIRECT_URL\\s*=') { 'DIRECT_URL=\"\"' } else { $_ } }; Set-Content -LiteralPath 'server\\.env' -Value $updated -Encoding utf8; Write-Output 'Cleared the example-only DIRECT_URL in ignored server/.env; migration will fall back to DATABASE_URL.'",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "retry-migrations-pooled-url",
+			"type": "shell",
+			"command": "Set-Location 'c:\\Users\\Asus\\bookingApp\\server'; npx prisma migrate deploy 2>&1 | ForEach-Object { ($_ | Out-String) -replace 'postgres(?:ql)?://[^@\\s]+@', 'postgresql://[REDACTED]@' }",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "inspect-neon-schema-metadata",
+			"type": "shell",
+			"command": "Set-Location 'c:\\Users\\Asus\\bookingApp\\server'; npx tsx prisma\\inspect-schema.ts",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "inspect-legacy-schema-safe",
+			"type": "shell",
+			"command": "Set-Location 'c:\\Users\\Asus\\bookingApp\\server'; npx tsx prisma\\inspect-schema.ts",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "read-legacy-slot-shapes",
+			"type": "shell",
+			"command": "Set-Location 'c:\\Users\\Asus\\bookingApp\\server'; npx tsx prisma\\inspect-schema.ts",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "apply-additive-migration",
+			"type": "shell",
+			"command": "Set-Location 'c:\\Users\\Asus\\bookingApp\\server'; npx prisma db execute --file prisma\\migrations\\20261014_init\\migration.sql",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "baseline-applied-migration",
+			"type": "shell",
+			"command": "Set-Location 'c:\\Users\\Asus\\bookingApp\\server'; npx prisma migrate resolve --applied 20261014_init; npx prisma migrate deploy",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "start-api-with-neon",
+			"type": "shell",
+			"command": "npm run dev:server",
+			"isBackground": true,
+			"problemMatcher": []
+		},
+		{
+			"label": "verify-neon-http-health",
+			"type": "shell",
+			"command": "try { $health = Invoke-WebRequest -Uri 'http://localhost:3001/api/health' -TimeoutSec 15 -UseBasicParsing; Write-Output \"health HTTP $($health.StatusCode): $($health.Content)\"; $slots = Invoke-WebRequest -Uri 'http://localhost:3001/api/public/slots' -TimeoutSec 15 -UseBasicParsing; $parsed = ConvertFrom-Json $slots.Content; Write-Output \"public slots HTTP $($slots.StatusCode); count=$($parsed.Count); first=$($parsed[0].startAt) duration=$($parsed[0].durationMinutes)\" } catch { Write-Output \"API check failed: $($_.Exception.Message)\"; exit 1 }",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "start-frontend-again",
+			"type": "shell",
+			"command": "npm run dev:client",
+			"isBackground": true,
+			"problemMatcher": []
+		},
+		{
+			"label": "verify-public-slots-api",
+			"type": "shell",
+			"command": "$response = Invoke-WebRequest -Uri 'http://localhost:3001/api/public/slots' -TimeoutSec 15 -UseBasicParsing; $data = ConvertFrom-Json $response.Content; Write-Output ('HTTP ' + $response.StatusCode); Write-Output ('Slot count: ' + $data.Length); foreach ($slot in $data) { Write-Output ($slot.startAt + ' ' + $slot.durationMinutes + ' minutes ' + $slot.status) }",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "verify-dashboard-response-shape",
+			"type": "shell",
+			"command": "$response = Invoke-WebRequest -Uri 'http://localhost:3001/api/dashboard' -TimeoutSec 15 -UseBasicParsing; $data = ConvertFrom-Json $response.Content; Write-Output ('HTTP ' + $response.StatusCode); Write-Output ('Response type: ' + $data.GetType().Name); if ($data -is [array]) { Write-Output ('Dashboard items: ' + $data.Length) } else { Write-Output ('Dashboard fields: ' + ($data.PSObject.Properties.Name -join ', ')) }",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "check-worktree-scope",
+			"type": "shell",
+			"command": "git status --short",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "build-and-lint-server-toast",
+			"type": "shell",
+			"command": "npm run build:server; if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }; npm --workspace server run lint",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "validate-booking-toast",
+			"type": "shell",
+			"command": "npm --workspace server test -- src/app.controller.spec.ts; if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }; npm run build:client; if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }; npm --workspace client run lint",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "rebuild-and-lint-client",
+			"type": "shell",
+			"command": "npm run build:client; if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }; npm --workspace client exec -- eslint src/App.tsx",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "verify-ai-source-response",
+			"type": "shell",
+			"command": "$body = '{\"slotId\":\"not-present\",\"firstName\":\"Check\"}'; $result = Invoke-RestMethod -Uri 'http://localhost:3001/api/ai/confirmation' -Method Post -ContentType 'application/json' -Body $body -TimeoutSec 10; Write-Output ('Source: ' + $result.source); Write-Output ('Has message: ' + [bool]$result.message); if ($result.source -ne 'fallback' -or !$result.message) { exit 1 }",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "verify-ai-source-endpoint",
+			"type": "shell",
+			"command": "$body = @{ slotId = 'not-present'; firstName = 'Check' } | ConvertTo-Json -Compress; $result = Invoke-RestMethod -Uri 'http://localhost:3001/api/ai/confirmation' -Method Post -ContentType 'application/json' -Body $body -TimeoutSec 10; Write-Output ('Source: ' + $result.source); Write-Output ('Has message: ' + [bool]$result.message); if ($result.source -ne 'fallback' -or !$result.message) { exit 1 }",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "inspect-server-listener",
+			"type": "shell",
+			"command": "$listener = Get-NetTCPConnection -LocalPort 3001 -State Listen -ErrorAction SilentlyContinue | Select-Object -First 1; if (!$listener) { Write-Output 'No backend is listening on 3001'; exit 1 }; $process = Get-CimInstance Win32_Process -Filter \"ProcessId = $($listener.OwningProcess)\"; Write-Output ('PID=' + $process.ProcessId + '; ParentPID=' + $process.ParentProcessId + '; Name=' + $process.Name)",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "identify-api-process",
+			"type": "shell",
+			"command": "$listener = Get-NetTCPConnection -LocalPort 3001 -State Listen -ErrorAction SilentlyContinue | Select-Object -First 1; if (!$listener) { Write-Output 'No backend is listening on 3001'; exit 1 }; $process = Get-Process -Id $listener.OwningProcess -ErrorAction Stop; Write-Output ('PID=' + $process.Id + '; Name=' + $process.ProcessName)",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "inspect-api-command",
+			"type": "shell",
+			"command": "Get-CimInstance Win32_Process | Where-Object { $_.ProcessId -eq 24504 } | ForEach-Object { Write-Output ('PID=' + $_.ProcessId + '; Parent=' + $_.ParentProcessId + '; Command=' + $_.CommandLine) }",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "restart-updated-api",
+			"type": "shell",
+			"command": "Stop-Process -Id 24504 -ErrorAction Stop; Start-Sleep -Seconds 1; $listener = Get-NetTCPConnection -LocalPort 3001 -State Listen -ErrorAction SilentlyContinue; if ($listener) { Write-Output 'Port 3001 remains occupied after stopping the prior TeamLift API process.'; exit 1 }; Write-Output 'Stopped the prior TeamLift API process; port 3001 is free.'",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "start-updated-api",
+			"type": "shell",
+			"command": "npm run dev:server",
+			"isBackground": true,
+			"problemMatcher": []
+		},
+		{
+			"label": "verify-live-api-contract",
+			"type": "shell",
+			"command": "Start-Sleep -Seconds 4; $health = Invoke-RestMethod -Uri 'http://localhost:3001/api/health' -TimeoutSec 15; $body = @{ slotId = 'not-present'; firstName = 'Check' } | ConvertTo-Json -Compress; $confirmation = Invoke-RestMethod -Uri 'http://localhost:3001/api/ai/confirmation' -Method Post -ContentType 'application/json' -Body $body -TimeoutSec 15; Write-Output ('Health: ' + $health.database); Write-Output ('Confirmation source: ' + $confirmation.source); Write-Output ('Confirmation message present: ' + [bool]$confirmation.message); if ($health.database -ne 'connected' -or $confirmation.source -ne 'fallback' -or !$confirmation.message) { exit 1 }",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "check-neon-availability-count",
+			"type": "shell",
+			"command": "$slots = Invoke-RestMethod -Uri 'http://localhost:3001/api/public/slots' -TimeoutSec 15; $dashboard = Invoke-RestMethod -Uri 'http://localhost:3001/api/dashboard' -TimeoutSec 15; Write-Output ('Public available slots: ' + $slots.Count); Write-Output ('Dashboard summary: upcoming=' + $dashboard.summary.upcomingSlots + ', available=' + $dashboard.summary.availableSlots + ', bookings=' + $dashboard.summary.upcomingBookings)",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "reproduce-gemini-confirmation",
+			"type": "shell",
+			"command": "$dashboard = Invoke-RestMethod -Uri 'http://localhost:3001/api/dashboard' -TimeoutSec 15; $slot = $dashboard.slots | Where-Object { $_.startAt -gt (Get-Date).ToUniversalTime().ToString('o') } | Select-Object -First 1; if (!$slot) { Write-Output 'REPRO_BLOCKED: no future slot found'; exit 2 }; $body = @{ slotId = $slot.id; firstName = 'Diagnostic' } | ConvertTo-Json -Compress; 1..3 | ForEach-Object { try { $result = Invoke-RestMethod -Uri 'http://localhost:3001/api/ai/confirmation' -Method Post -ContentType 'application/json' -Body $body -TimeoutSec 30; Write-Output ('run ' + $_ + ': source=' + $result.source + '; nonempty=' + [bool]$result.message) } catch { Write-Output ('run ' + $_ + ': request failed: ' + $_.Exception.Message) } }",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "check-gemini-env-config",
+			"type": "shell",
+			"command": "node -e \"const fs=require('fs'); const path=require('path'); const dotenv=require('dotenv'); for (const p of ['server/.env.local','server/.env']) { const f=path.resolve(p); if (!fs.existsSync(f)) { console.log(p+': missing'); continue; } const v=dotenv.parse(fs.readFileSync(f)); const key=(v.GEMINI_API_KEY||'').trim(); const model=(v.GEMINI_MODEL||'').trim(); console.log(p+': file present; key='+(!key?'missing':/^replace[-_ ]?with/i.test(key)?'placeholder':'configured')+'; model='+(model||'(default)')); } console.log('process environment key present: '+Boolean((process.env.GEMINI_API_KEY||'').trim()));\"",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "inspect-gemini-env-presence",
+			"type": "shell",
+			"command": "foreach ($path in @('server\\.env.local','server\\.env')) { if (!(Test-Path $path)) { Write-Output ($path + ': missing'); continue }; $lines = Get-Content $path; $keyLine = $lines | Where-Object { $_ -match '^\\s*GEMINI_API_KEY\\s*=' } | Select-Object -First 1; $modelLine = $lines | Where-Object { $_ -match '^\\s*GEMINI_MODEL\\s*=' } | Select-Object -First 1; $keyStatus = 'missing'; if ($keyLine) { $keyValue = ($keyLine -replace '^\\s*GEMINI_API_KEY\\s*=\\s*','').Trim().Trim('\"').Trim(\"'\"); if ($keyValue) { if ($keyValue -match '(?i)replace[-_ ]?with|your[_ -]?key|placeholder') { $keyStatus = 'placeholder' } else { $keyStatus = 'configured' } } }; $modelValue='(default)'; if ($modelLine) { $modelValue = ($modelLine -replace '^\\s*GEMINI_MODEL\\s*=\\s*','').Trim().Trim('\"').Trim(\"'\") }; Write-Output ($path + ': key=' + $keyStatus + '; model=' + $modelValue) }",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "check-gemini-env-status",
+			"type": "shell",
+			"command": "$files = @('server\\.env.local','server\\.env'); foreach ($p in $files) { if (!(Test-Path $p)) { Write-Output ($p + ': missing'); continue }; $keyLine = Select-String -Path $p -Pattern '^\\s*GEMINI_API_KEY\\s*=' | Select-Object -First 1; $modelLine = Select-String -Path $p -Pattern '^\\s*GEMINI_MODEL\\s*=' | Select-Object -First 1; $status = 'missing'; if ($keyLine) { if ($keyLine.Line -match 'replace-with-your-key|placeholder') { $status = 'placeholder' } elseif ($keyLine.Line.Length -gt 16) { $status = 'configured' } }; $model = '(default)'; if ($modelLine) { $model = $modelLine.Line -replace '^\\s*GEMINI_MODEL\\s*=\\s*',''; $model = $model.Trim([char]34) }; Write-Output ($p + ': key=' + $status + '; model=' + $model) }",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "validate-gemini-service",
+			"type": "shell",
+			"command": "npm run build:server; if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }; npm --workspace server run lint",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "test-gemini-calls-mocked-provider",
+			"type": "shell",
+			"command": "npm --workspace server test -- src/app.controller.spec.ts",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "inspect-running-api-instance",
+			"type": "shell",
+			"command": "$l = Get-NetTCPConnection -LocalPort 3001 -State Listen -ErrorAction SilentlyContinue | Select-Object -First 1; if (!$l) { Write-Output 'Port 3001: no listener'; exit 1 }; Get-CimInstance Win32_Process | Where-Object { $_.ProcessId -eq $l.OwningProcess -or $_.ParentProcessId -eq $l.OwningProcess } | ForEach-Object { Write-Output ('PID=' + $_.ProcessId + '; Parent=' + $_.ParentProcessId + '; Command=' + $_.CommandLine) }",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "inspect-api-parent",
+			"type": "shell",
+			"command": "$l = Get-NetTCPConnection -LocalPort 3001 -State Listen -ErrorAction SilentlyContinue | Select-Object -First 1; $pidValue = $l.OwningProcess; $child = Get-CimInstance Win32_Process | Where-Object { $_.ProcessId -eq $pidValue } | Select-Object -First 1; $parent = Get-CimInstance Win32_Process | Where-Object { $_.ProcessId -eq $child.ParentProcessId } | Select-Object -First 1; Write-Output ('API PID=' + $child.ProcessId + '; ' + $child.CommandLine); if ($parent) { Write-Output ('Parent PID=' + $parent.ProcessId + '; ' + $parent.CommandLine) }",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "restart-api-current-gemini-model",
+			"type": "shell",
+			"command": "Stop-Process -Id 26736 -ErrorAction Stop; Start-Sleep -Seconds 1; $listener = Get-NetTCPConnection -LocalPort 3001 -State Listen -ErrorAction SilentlyContinue; if ($listener) { Write-Output 'Port 3001 is still occupied; not starting a second API instance.'; exit 1 }; Write-Output 'Stopped verified TeamLift API process on port 3001.'",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "start-api-model-2-5",
+			"type": "shell",
+			"command": "npm run dev:server",
+			"isBackground": true,
+			"problemMatcher": []
+		},
+		{
+			"label": "verify-live-gemini-generation",
+			"type": "shell",
+			"command": "$dashboard = Invoke-RestMethod -Uri 'http://localhost:3001/api/dashboard' -TimeoutSec 15; $slot = $dashboard.slots | Where-Object { $_.startAt -gt (Get-Date).ToUniversalTime().ToString('o') } | Select-Object -First 1; if (!$slot) { Write-Output 'No future slot exists for a live provider check.'; exit 2 }; $body = @{ slotId = $slot.id; firstName = 'Diagnostic' } | ConvertTo-Json -Compress; $result = Invoke-RestMethod -Uri 'http://localhost:3001/api/ai/confirmation' -Method Post -ContentType 'application/json' -Body $body -TimeoutSec 45; Write-Output ('Gemini confirmation source: ' + $result.source); Write-Output ('Generated message nonempty: ' + [bool]$result.message); if ($result.source -ne 'gemini') { exit 1 }",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "test-and-build-current-gemini",
+			"type": "shell",
+			"command": "npm --workspace server test -- src/app.controller.spec.ts; if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }; npm run build:server; if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }; npm --workspace server run lint",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "inspect-listening-api-owner",
+			"type": "shell",
+			"command": "$l = Get-NetTCPConnection -LocalPort 3001 -State Listen -ErrorAction SilentlyContinue | Select-Object -First 1; if (!$l) { Write-Output 'No API listener'; exit 1 }; $p = Get-CimInstance Win32_Process | Where-Object { $_.ProcessId -eq $l.OwningProcess } | Select-Object -First 1; Write-Output ('PID=' + $l.OwningProcess + '; Command=' + $p.CommandLine)",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "list-bookingapp-node-processes",
+			"type": "shell",
+			"command": "Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -match 'bookingApp' } | ForEach-Object { Write-Output ('PID=' + $_.ProcessId + '; Parent=' + $_.ParentProcessId + '; Command=' + $_.CommandLine) }",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "clear-duplicate-app-api-watchers",
+			"type": "shell",
+			"command": "Stop-Process -Id 2596,29096,11544,5604 -ErrorAction SilentlyContinue; Start-Sleep -Seconds 1; $listener = Get-NetTCPConnection -LocalPort 3001 -State Listen -ErrorAction SilentlyContinue; if ($listener) { Write-Output ('Port 3001 remains held by PID ' + $listener[0].OwningProcess); exit 1 }; Write-Output 'Stopped only the identified TeamLift Nest/API processes; port 3001 is free.'",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "confirm-api-port-free",
+			"type": "shell",
+			"command": "$l = Get-NetTCPConnection -LocalPort 3001 -State Listen -ErrorAction SilentlyContinue | Select-Object -First 1; if ($l) { Write-Output ('Port 3001 held by PID ' + $l.OwningProcess); exit 1 } else { Write-Output 'Port 3001 is free.' }",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "start-single-api-watcher",
+			"type": "shell",
+			"command": "npm run dev:server",
+			"isBackground": true,
+			"problemMatcher": []
+		},
+		{
+			"label": "test-real-gemini-3-8-response",
+			"type": "shell",
+			"command": "$dashboard = Invoke-RestMethod -Uri 'http://localhost:3001/api/dashboard' -TimeoutSec 15; $slot = $dashboard.slots | Where-Object { $_.startAt -gt (Get-Date).ToUniversalTime().ToString('o') } | Select-Object -First 1; if (!$slot) { Write-Output 'No future slot exists for live provider check.'; exit 2 }; $body = @{ slotId = $slot.id; firstName = 'Diagnostic' } | ConvertTo-Json -Compress; $result = Invoke-RestMethod -Uri 'http://localhost:3001/api/ai/confirmation' -Method Post -ContentType 'application/json' -Body $body -TimeoutSec 45; Write-Output ('Source=' + $result.source + '; nonempty=' + [bool]$result.message); if ($result.source -ne 'gemini') { exit 1 }",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "retry-live-gemini-provider",
+			"type": "shell",
+			"command": "$dashboard = Invoke-RestMethod -Uri 'http://localhost:3001/api/dashboard' -TimeoutSec 15; $slot = $dashboard.slots | Where-Object { $_.startAt -gt (Get-Date).ToUniversalTime().ToString('o') } | Select-Object -First 1; $body = @{ slotId = $slot.id; firstName = 'Diagnostic' } | ConvertTo-Json -Compress; 1..3 | ForEach-Object { $result = Invoke-RestMethod -Uri 'http://localhost:3001/api/ai/confirmation' -Method Post -ContentType 'application/json' -Body $body -TimeoutSec 45; Write-Output ('attempt ' + $_ + ': ' + $result.source); if ($result.source -eq 'fallback' -and $_ -lt 3) { Start-Sleep -Seconds 3 } }",
+			"isBackground": false,
+			"problemMatcher": []
+		}
+	]
+}
