@@ -167,12 +167,109 @@ Tests mock the Prisma service and do not require Neon credentials. Verify a
 configured live database with `http://localhost:3001/api/health` before testing
 the booking flow.
 
-## Deployment outline
+## Hosting: Neon + Render + Vercel
 
-1. Create a Neon PostgreSQL project. Configure `DATABASE_URL` and (recommended) its direct, unpooled counterpart as `DIRECT_URL`.
-2. Configure the Render backend with the server build/start commands (`npm run build:server` and `npm --workspace server run start:prod`) and the backend environment variables. Apply the committed migrations with `npm run db:migrate`; run `npm run db:seed` once only if the hosted demo should include sample records.
-3. Deploy `client/` to Vercel and set `VITE_API_BASE_URL` to the Render API URL ending in `/api`.
-4. Set `CLIENT_URL` on Render to the deployed Vercel origin and verify `/api/health` and a booking flow.
+This repo is an npm-workspaces monorepo. Keep both hosting projects rooted at the repository root so they use the root `package-lock.json`. The standalone `client/package-lock.json` does not list all the frontend libraries; deploying Vercel with `client/` as its root makes `npm ci` omit those libraries and causes the TypeScript "Cannot find module" errors shown in the Vercel build log.
+
+### 1. Create the PostgreSQL database
+
+1. Create a PostgreSQL project in Neon and copy its pooled connection string for runtime use.
+2. Also copy the direct/unpooled connection string for migrations. Do not commit either URL.
+3. You will add these as Render environment variables in the next step. `DATABASE_URL` is required; `DIRECT_URL` is recommended for migration commands.
+
+### 2. Deploy the API to Render
+
+Create a **Web Service** from the Git repository with these settings:
+
+| Render setting | Value |
+| --- | --- |
+| Root Directory | Leave blank (repository root) |
+| Runtime | Node |
+| Build Command | `npm ci && npm run build:server` |
+| Start Command | `npm --workspace server run start:prod` |
+| Health Check Path | `/api/health` |
+
+Set these environment variables in Render's service settings. Do not add quotes around values in the Render UI.
+
+| Variable | Value | Required |
+| --- | --- | --- |
+| `DATABASE_URL` | Neon pooled/runtime connection string | Yes |
+| `DIRECT_URL` | Neon direct/unpooled connection string | Recommended; used by Prisma migrations when present |
+| `CLIENT_URL` | Exact frontend origin, e.g. `https://your-project.vercel.app` (no trailing slash or path) | Yes for browser requests |
+| `GEMINI_API_KEY` | Gemini API key | Optional; fallback confirmation works without it |
+| `GEMINI_MODEL` | For example `gemini-3.8-flash` | Optional |
+| `NODE_VERSION` | `22` | Recommended |
+
+Do not set `PORT` manually on Render. Render supplies it at runtime, and `server/src/main.ts` reads `process.env.PORT` (falling back to 3001 locally).
+
+Deploy the service once. From the Render service's **Shell** (working directory is the repository root), apply database migrations:
+
+```sh
+npm run db:migrate
+```
+
+This applies the committed Prisma migrations, including the slot-overlap and confirmed-booking constraints. Run migrations again after deploying a future schema change. If your Render plan supports a pre-deploy command, set it to `npm run db:migrate` so migrations complete before each new version starts; otherwise run it manually from the Render Shell before relying on the new schema.
+
+Only if you want sample data in the hosted app, run this once from the same Render Shell after migrating:
+
+```sh
+npm run db:seed
+```
+
+Skip seeding for a clean production database. The seed is marked as demo data and does not run automatically. Never use `db:cleanup-demo` as a production reset.
+
+Check the deployed API before configuring the frontend:
+
+```sh
+curl.exe -i https://YOUR-RENDER-SERVICE.onrender.com/api/health
+```
+
+Expect HTTP 200 and JSON with `"ok": true` and `"database": "connected"`. A database/configuration error must be fixed on Render before deploying the client.
+
+### 3. Deploy the frontend to Vercel
+
+Import the same Git repository into Vercel and set the project options:
+
+| Vercel setting | Value |
+| --- | --- |
+| Root Directory | `.` (repository root; do not set this to `client`) |
+| Framework Preset | Vite |
+| Install Command | `npm ci` |
+| Build Command | `npm run build:client` |
+| Output Directory | `client/dist` |
+
+Set this Vercel project environment variable for **Production** (and Preview too, if you want preview deployments to call the same API):
+
+| Variable | Value |
+| --- | --- |
+| `VITE_API_BASE_URL` | `https://YOUR-RENDER-SERVICE.onrender.com/api` |
+
+The value must include `/api`; it is compiled into the frontend during the Vercel build and is not a secret. Trigger a deployment after adding or changing it.
+
+The root `vercel.json` rewrites client-side routes to the built `index.html`, allowing direct visits or refreshes at `/dashboard`. Keep that file if you change frontend hosting or routing configuration.
+
+### 4. Connect CORS and verify the full deployment
+
+Copy the deployed Vercel origin (or custom domain) and update Render's `CLIENT_URL` to exactly that origin, for example `https://your-project.vercel.app`. Do not include a route or trailing slash. Save the variable and redeploy/restart the Render service so the API reads it.
+
+Then verify:
+
+1. Open `https://YOUR-RENDER-SERVICE.onrender.com/api/health` and confirm it reports database connectivity.
+2. Open the Vercel URL and confirm availability loads. If it does not, check the browser console/network tab, `VITE_API_BASE_URL`, and Render's `CLIENT_URL`.
+3. Test the complete flow: create a future slot in `/dashboard`, book it from `/`, and confirm it disappears from public availability.
+4. Refresh `/dashboard` directly to check the Vercel SPA rewrite.
+
+If you use a custom frontend domain, update `CLIENT_URL` to that domain's origin and redeploy the API. If you change the Render API URL, update `VITE_API_BASE_URL` in Vercel and redeploy the frontend.
+
+### Optional Vercel CLI deployment
+
+After linking the Vercel project and configuring its environment variables, deploy from the repository root with:
+
+```powershell
+npx vercel --prod
+```
+
+Otherwise, deploy through the Vercel dashboard by importing the repository; no local CLI installation is required. Hosting-provider dashboards and free-tier behavior can change, so confirm the current plan's service availability and sleep/usage limits.
 
 No live deployment was performed from this workspace.
 
@@ -183,3 +280,6 @@ No live deployment was performed from this workspace.
 Never put real database credentials in `.env.example` or commit local `.env`
 files. If a connection string has been committed or shared, rotate its database
 password and update the local environment file.
+
+
+https://bookingapp-992h.onrender.com/api/

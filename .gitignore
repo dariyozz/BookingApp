@@ -10,3 +10,5 @@ server/.env.*
 !server/.env.example
 *.tsbuildinfo
 npm-debug.log*
+TeamLift Product Engineer Internship Challenge.md
+prompt.md
